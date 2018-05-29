@@ -51,6 +51,8 @@ class Page(object):
             except socket.timeout:
                 print('连接失败，正在重新连接...')
                 continue
+            except Exception:
+                continue
 
             job_soup = BeautifulSoup(job_html, 'html.parser')
             flag = 1  # 决定数据是否被存入csv文件中
